@@ -10,10 +10,19 @@ class Movie extends Model
     use HasFactory;
 
     protected $fillable = [
-		'title',
+		'themoviedb_id',
+        'title',
 		'backdrop_path',
 		'original_title',
 		'overview',
-        'poster_path'
+        'poster_path',
+        'media_type',
+        'adult',
+        'original_language',
+        'popularity',
+        'release_date',
+        'video',
+        'vote_average',
+        'vote_count'
 	];
 }
