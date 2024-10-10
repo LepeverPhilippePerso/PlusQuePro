@@ -1,66 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="https://www.plus-que-pro.fr/public/donnees/cms/sources/logos/logo.png" width="400" alt="Laravel Logo"></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Lepever Philippe<br>PlusQuePro recruitment test
 
-## About Laravel
+Here are the tasks required:
+- [x] Installation of Git
+- [x] Installation of the latest version of Laravel
+- [x] Have a backoffice with restricted access (Jetstream, ...) 
+- [x] Installation of React
+- [x] Retrieve data from the api and store it in a database via an executable php artisan script (if possible)
+- [ ] A search page (with search bar optimization) and the list of films below (and search results, if any)
+- [ ] A page for viewing film information such as name, description, link to its image url + other information if possible
+- [ ] Set up an infinite scroll on the film list, but code it yourself without a library
+- [ ] A search page with a search field and a list of results below, each film being clickable to view film details on a second page
+- [x] Regularly comment code on the repository to keep a clear history of your your work  
+- [x] Using packages, Laravel and React best practices 
+- [x] Docking a project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Bonus tasks
+- [ ] Data can be updated once a day
+Possibility of editing film file fields, making at least the title mandatory
+- [ ] Possibility of deleting films 
+- [ ] Search field to find a specific film quickly 
+- [ ] Retrieve multiple categories and change product categories 
+- [ ] Use of React for integration 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Download Data from api via php Artisan
 
-## Learning Laravel
+To create/update the movie list, simply type this command:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+``` php artisan app:download-movies ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Docking a project
+Coming soon
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Provide login/password
+You'll need to create an account to access the dashboard.
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Document the research carried out to develop the app
+- [Laravel's doc](https://laravel.com/docs/11.x/installation)
+- [Grafikart's lessons](https://www.youtube.com/watch?v=xSfZwqzs_OM&list=PLjwdMgw5TTLXz1GRhKxSWYyDHwVW-gqrm)
+- [jetstream's doc](https://jetstream.laravel.com/installation.html)
+- [reactjs-inertiajs-jetstream-laravel lib](https://github.com/pkfan/reactjs-inertiajs-jetstream-laravel)
+- [tailwindcss's doc](https://tailwindcss.com/docs/height)
+- [stackoverflow: save data from api to database laravel](https://stackoverflow.com/questions/60395045/save-data-from-api-to-database-laravel)
+- [Blog: Create custom artisan command](https://www.cloudways.com/blog/custom-artisan-commands-laravel/#:~:text=To%20create%20a%20new%20command,will%20be%20generated%20for%20you)
