@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Providers;
-
 use Illuminate\Support\ServiceProvider;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +11,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        //$this->app->singleton(ApiTheMovieDBComponent::class, function () { return new ApiTheMovieDBComponent(); } );
+        $this->app->singleton(ApiTheMovieDB::class, function () { return new ApiTheMovieDB(); } );
+
     }
 
     /**

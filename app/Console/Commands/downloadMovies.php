@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Movie;
+use App\View\Components\ApiTheMovieDBComponent;
+
 use Illuminate\Console\Command;
 
 class downloadMovies extends Command
@@ -26,7 +28,10 @@ class downloadMovies extends Command
      */
     public function handle()
     {
+        $ApiTheMovieDB = app(ApiTheMovieDBComponent::class);
         $this->info('Start of movie downloads and updates');
+
+
 
         // Display a success message
         $this->info('Downloading and updating of the movies have been successfully completed');
