@@ -2,16 +2,24 @@ import React from 'react';
 import axios from "axios";
 import { Component } from "react";
 
+
+interface Props {
+  id: number;
+  movie: [];
+}
+
 class MovieReadOne extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
+      id:props.idMovie,
       movie: [],
     };
   }
   fetchMovie() {
     axios
-      .get('/api/movies/1')
+      .get('/api/movies/' + this.state.id)
       .then((response) => {
         console.log(response.data.movie);
         this.setState({ movie: response.data.movie });
