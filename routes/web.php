@@ -20,6 +20,7 @@ Route::get('/trending', function () {
     return MovieResource::collection(\App\Models\Movie::all());
 });
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -28,4 +29,16 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+
+    Route::get('/dashboard/movies/{id}', function (int $id) {
+        return Inertia::render('MovieRead', [
+            'id' => $id
+        ]);
+    })
+    ->name('movie.read')
+    ->where('id', '[0-9]*');
+
+
+
 });

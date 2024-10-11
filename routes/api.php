@@ -14,9 +14,36 @@ Route::get('/trending', function () {
     dd($page);
 });
 
+/*
+Route::group(['namespace' => '\App\Http\Controllers\Api', 'middleware' => ['auth:sanctum', config('jetstream.auth_session'), 'verified']], function() {
+    Route::get('/movies', [MovieController::class, 'list'])->name('movies.list');
+});*/
+/*
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/movies', [MovieController::class, 'list'])->name('movies.list');
+  });
+  */
+  //Route::get('/movies', [MovieController::class, 'list'])->name('movies.list');
+/*
+  Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'shared.ui',
+    'verified',
+])->group(function () {
+    Route::get('/movies', [MovieController::class, 'list'])->name('movies.list');
+});
+*/
+
+
 Route::prefix('/movies')->name('movies.')->middleware('guest')->group(function () {
 	// List
     Route::get('/', [MovieController::class, 'list'])->name('list');
+    // Read -- Get
+    Route::get('/{id}', [MovieController::class, 'read'])->name('read')
+        ->where('id', '[0-9]*')
+        ;
+
     /*
 	// Create -- Post
 	Route::post('/c', [PostController::class, 'create'])->name('create');
