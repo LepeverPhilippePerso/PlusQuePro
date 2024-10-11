@@ -12,46 +12,63 @@ class MovieList extends Component {
   fetchMovies() {
     axios
       .get('/api/movies')
-      .then((response) => this.setState({ movies: response.data }));
+      .then((response) => {
+        response.data.forEach(function (movie) {
+          movie.href = "/dashboard/movies/" + movie.id
+        });
+        this.setState({ movies: response.data });
+      });
   }
   componentDidMount() {
     this.fetchMovies();
   }
   renderMovies() {
     console.log(this.state);
-    return this.state.movies?.map((movie) => (
-      <tr key={movie.id}>
-        <td className="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
-          {movie.title}
-        </td>
-        <td className="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
-          {movie.overview}
-        </td>
-      </tr>
+    return this.state.movies.map((movie) => (
+
+      <><article key={movie.id} className="flex max-w-xl flex-col items-start justify-between">
+        <a href={movie.href}>
+          <img alt="" src={"https://image.tmdb.org/t/p/w200" + movie.backdrop_path} className="h-100 w-100 bg-gray-50" />
+        </a>
+        <div className="flex items-center gap-x-4 text-xs">
+          <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+            <a href={movie.href}>
+              {movie.title}
+            </a>
+          </h3>
+        </div>
+        <div className="group relative">
+          <div className="row flex">
+            <a href={movie.href}>
+              <button
+                className="rounded-md rounded-r-none bg-blue-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-none active:bg-blue-700 hover:bg-blue-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                type="button">
+                Voir
+              </button>
+            </a>
+            <button
+              className="rounded-md rounded-l-none bg-red-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-red-700 focus:shadow-none active:bg-red-700 hover:bg-red-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              type="button">
+              Supprimer
+            </button>
+          </div>
+        </div>
+
+      </article></>
+
     ));
   }
   render() {
     return (
-      <div className="overflow-hidden overflow-x-auto p-6 bg-white border-gray-200">
-        <div className="min-w-full align-middle">
-          <table className="min-w-full divide-y divide-gray-200 border">
-            <thead>
-              <tr>
-                <th className="px-6 py-3 bg-gray-50">
-                  <span className="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">Title</span>
-                </th>
-                <th className="px-6 py-3 bg-gray-50">
-                  <span className="text-xs font-medium tracking-wider leading-4 text-left text-gray-500 uppercase">overview</span>
-                </th>
-                
-              </tr>
-            </thead>
-            <tbody className="table-body">
-              {this.renderMovies()}
-            </tbody>
-          </table>
+
+        <div className="p-6 lg:p-8 bg-white dark:bg-gray-800 dark:bg-gradient-to-bl dark:from-gray-700/50 dark:via-transparent border-b border-gray-200 dark:border-gray-700">
+          <h1 className="mt-8 text-2xl font-medium text-gray-900 dark:text-white">Derniers films</h1>
+          <div className="p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+                {this.renderMovies()}
+              </div>
+          </div>
         </div>
-      </div>
     );
   }
 }
