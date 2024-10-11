@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Movie extends Model
 {
     use HasFactory;
+    use Searchable;
 
     protected $fillable = [
 		'themoviedb_id',
@@ -25,4 +27,15 @@ class Movie extends Model
         'vote_average',
         'vote_count'
 	];
+
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'overview' => $this->overview,
+            'original_title' => $this->original_title,
+            'release_date' => $this->release_date,
+        ];
+    }
 }
