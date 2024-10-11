@@ -1,8 +1,8 @@
 import React from 'react';
-import { Component } from "react";
 import axios from "axios";
+import { Component } from "react";
 
-class MovieRead extends Component {
+class MovieReadOne extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,4 +58,4 @@ class MovieRead extends Component {
     );
   }
 }
-export default MovieRead;
+export default MovieReadOne;
