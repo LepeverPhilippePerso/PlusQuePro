@@ -8,9 +8,10 @@ Here are the tasks required:
 - [x] Have a backoffice with restricted access (Jetstream, ...) 
 - [x] Installation of React
 - [x] Retrieve data from the api and store it in a database via an executable php artisan script (if possible)
-- [ ] A search page (with search bar optimization) and the list of films below (and search results, if any)
+- [ ] A page listing the latest trending films of the day or month (1 page)
 - [ ] A page for viewing film information such as name, description, link to its image url + other information if possible
 - [ ] Set up an infinite scroll on the film list, but code it yourself without a library
+- [ ] A search page (with search bar optimization) and the list of films below (and search results, if any)
 - [ ] A search page with a search field and a list of results below, each film being clickable to view film details on a second page
 - [x] Regularly comment code on the repository to keep a clear history of your your work  
 - [x] Using packages, Laravel and React best practices 
@@ -18,7 +19,7 @@ Here are the tasks required:
 
 ### Bonus tasks
 - [ ] Data can be updated once a day
-Possibility of editing film file fields, making at least the title mandatory
+- [ ] Possibility of editing film file fields, making at least the title mandatory
 - [ ] Possibility of deleting films 
 - [ ] Search field to find a specific film quickly 
 - [ ] Retrieve multiple categories and change product categories 
