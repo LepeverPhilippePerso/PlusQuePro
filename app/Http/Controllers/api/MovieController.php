@@ -37,4 +37,14 @@ class MovieController extends Controller
                 ], 404);
         }
 	}
+    function search(Request $request){
+        $movies = \App\Models\Movie::search(trim($request->get('search')) ?? '')->get();
+ 
+        return Response::json(
+            [
+                'success' => true,
+                'movies' => $movies,
+                'message' => "The movies search was successful.",
+            ]);
+    }
 }
