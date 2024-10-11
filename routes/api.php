@@ -41,9 +41,9 @@ Route::prefix('/movies')->name('movies.')->middleware('guest')->group(function (
     Route::get('/', [MovieController::class, 'list'])->name('list');
     // Read -- Get
     Route::get('/{id}', [MovieController::class, 'read'])->name('read')
-        ->where('id', '[0-9]*')
-        ;
-
+        ->where('id', '[0-9]*');
+    // Search
+    Route::get('/search', [MovieController::class, 'search'])->name('search');
     /*
 	// Create -- Post
 	Route::post('/c', [PostController::class, 'create'])->name('create');
